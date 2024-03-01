@@ -39,21 +39,21 @@ public class MainActivity extends AppCompatActivity {
 
      public void buttonCopiarClick(View view){
          String idadeValue = idade.getText().toString();
-         String sexoValue = sexo.getText().toString();
+         String sexoValue = sexo.getText().toString().trim();
          String automovelValue = automovel.getText().toString();
 
 
-        if(Integer.parseInt(idadeValue) > 35 && sexoValue.equals("masculino") || sexoValue.equals("masculino ")){
+        if(Integer.parseInt(idadeValue) > 35 && sexoValue.equals("masculino")){
             int apolice = Integer.parseInt(automovelValue) * 10/100;
             value.setText(Integer.toString(apolice));
         }
 
-         if(Integer.parseInt(idadeValue) < 35 && sexoValue.equals("masculino") || sexoValue.equals("masculino ")){
+        if(Integer.parseInt(idadeValue) < 35 && sexoValue.equals("masculino")){
              int apolice = Integer.parseInt(automovelValue) * 5/100;
              value.setText(Integer.toString(apolice));
          }
 
-         if(sexoValue.equals("feminino") || sexoValue.equals("feminino ")){
+         if(sexoValue.equals("feminino")){
              int apolice = Integer.parseInt(automovelValue) * 2/100;
              value.setText(Integer.toString(apolice));
          }
